@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
+﻿using System.Collections.Generic;
 using ConfigureMe;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Tests.SiteSettings;
@@ -36,6 +34,14 @@ namespace Tests
 
             Assert.AreEqual(result[0], "Greg");
             Assert.AreEqual(result[1], "Trump");
+        }
+
+        [TestMethod]
+        public void BoolTest_ReturnsCorrectValue_WhenKeyIsValid()
+        {
+            bool result = _appSettings.GetBool(BlogConfig.BlogsEnabled);
+
+            Assert.IsTrue(result);
         }
 
         [TestMethod]

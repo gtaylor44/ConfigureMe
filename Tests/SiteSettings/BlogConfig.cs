@@ -6,6 +6,7 @@ namespace Tests.SiteSettings
     [Serializable]
     public enum BlogConfig
     {
-        [EnumMember] MaxBlogsPerPage = 1
+        [EnumMember] BlogsEnabled = 1,
+        [EnumMember] MaxBlogsPerPage = 2
     }
 }
