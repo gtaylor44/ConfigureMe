@@ -12,16 +12,18 @@ using ConfigureMe;
   IAppSettings appSettings = new AppSettings();
 }
 ```
-#####The namne of each enumeration should match the configuration entry in app/web.config.
+#####The name of each enumeration should match the configuration entry in app/web.config.
 Store your enumerations in some configuration namespace.
 
 e.g. BabySubscription in web.config would be:
+```xml
 <configuration> 
   <appSettings>
 	<add key="BabySubscription" value="4.95"/>
 	<add key="BlogsEnabled" value="true"/>
   </appSettings> 
 </configuration>
+```
 
 ```c#
 [Serializable]
