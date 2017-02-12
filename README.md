@@ -7,10 +7,6 @@ Let ConfigureMe ConfigureYou. ConfigureMe provides a simple way to extract the v
 -----------------------------
 ```c#
 using ConfigureMe;
-
-  // Mockable IAppSettings Interface.
-  IAppSettings appSettings = new AppSettings();
-}
 ```
 #####The name of each enumeration should match the configuration entry in app/web.config.
 Store your enumerations in some configuration namespace.
@@ -56,12 +52,12 @@ public enum CoreConfig
 
 // If the key does not exist or the value can't be parsed, a detailed exception is raised. 
 	
-string errorMessage = appSettings.GetString(CoreConfig.ServerErrorMessage);
+string errorMessage = AppSettings.GetString(CoreConfig.ServerErrorMessage);
 
-int blogsPerPage = appSettings.GetInt(BlogConfig.MaxBlogsPerPage);
+int blogsPerPage = AppSettings.GetInt(BlogConfig.MaxBlogsPerPage);
 
-decimal babySubscription = appSettings.GetDecimal(AdminConfig.BabySubscription);
+decimal babySubscription = AppSettings.GetDecimal(AdminConfig.BabySubscription);
 
-bool blogsEnabled = appSettings.GetBool(BlogConfig.BlogsEnabled);
+bool blogsEnabled = AppSettings.GetBool(BlogConfig.BlogsEnabled);
 
 ```
