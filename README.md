@@ -8,7 +8,7 @@ Let ConfigureMe ConfigureYou. ConfigureMe provides a simple way to extract the v
 ```c#
 using ConfigureMe;
 ```
-#####The name of each enumeration should match the configuration entry in app/web.config.
+The name of each enumeration must match the configuration entry in app/web.config.
 Store your enumerations in some configuration namespace.
 
 e.g. BabySubscription in web.config would be:
