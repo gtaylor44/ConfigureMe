@@ -7,16 +7,16 @@ namespace ConfigureMe
     /// <summary>
     /// Provides helper methods to extract values from appSettings. Requires ConfigurationManager  
     /// </summary>
-    public class AppSettings : IAppSettings
+    public static class AppSettings
     {
-        public string GetString<T>(T key) where T : struct
+        public static string GetString<T>(T key) where T : struct
         {
             string setting = GetSetting(key);
 
             return setting;
         }
 
-        public bool GetBool<T>(T key) where T : struct
+        public static bool GetBool<T>(T key) where T : struct
         {
             string setting = GetSetting(key);
 
@@ -37,14 +37,14 @@ namespace ConfigureMe
         /// <param name="key"></param>
         /// <param name="delimiter"></param>
         /// <returns></returns>
-        public string[] GetStringList<T>(T key, char delimiter) where T : struct
+        public static string[] GetStringList<T>(T key, char delimiter) where T : struct
         {
             string setting = GetSetting(key);
 
             return setting.Replace(" ", string.Empty).Split(delimiter);
         }
 
-        public int GetInt<T>(T key) where T : struct
+        public static int GetInt<T>(T key) where T : struct
         {
             string setting = GetSetting(key);
 
@@ -58,7 +58,7 @@ namespace ConfigureMe
             throw new InvalidOperationException("Could not parse integer in AppSettings");
         }
 
-        public float GetFloat<T>(T key) where T : struct
+        public static float GetFloat<T>(T key) where T : struct
         {
             string setting = GetSetting(key);
 
@@ -72,7 +72,7 @@ namespace ConfigureMe
             throw new InvalidOperationException("Could not parse float in AppSettings");
         }
 
-        public decimal GetDecimal<T>(T key) where T : struct
+        public static decimal GetDecimal<T>(T key) where T : struct
         {
             string setting = GetSetting(key);
 
@@ -86,7 +86,7 @@ namespace ConfigureMe
             throw new InvalidOperationException("Could not parse decimal in AppSettings");
         }
 
-        public double GetDouble<T>(T key) where T : struct
+        public static double GetDouble<T>(T key) where T : struct
         {
             string setting = GetSetting(key);
 
@@ -100,7 +100,7 @@ namespace ConfigureMe
             throw new InvalidOperationException("Could not parse double in AppSettings");
         }
 
-        public Guid GetGuid<T>(T key) where T : struct
+        public static Guid GetGuid<T>(T key) where T : struct
         {
             string setting = GetSetting(key);
 
@@ -113,7 +113,7 @@ namespace ConfigureMe
 
             throw new InvalidOperationException("Could not parse Guid in AppSettings");
         }
-        public string GetSetting<T>(T key)
+        public static string GetSetting<T>(T key)
         {
             if (!typeof(T).IsEnum) throw new NotSupportedException();
 
