@@ -105,7 +105,7 @@ namespace ConfigureMe
             string setting = GetSetting(key);
 
             Guid result;
-
+            
             if (Guid.TryParse(setting, out result))
             {
                 return result;
