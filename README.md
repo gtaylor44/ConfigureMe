@@ -1,6 +1,6 @@
 #ConfigureMe
 -----------------------------
-Let ConfigureMe ConfigureYou. ConfigureMe provides a simple way to extract the value of config entries in web.config and app.config files in a strongly typed fashion. 
+ConfigureMe provides a simple way to extract the value of config entries in web.config and app.config files in a strongly typed fashion. 
 
 
 ####Getting started
